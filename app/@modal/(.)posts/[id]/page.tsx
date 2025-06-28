@@ -4,7 +4,10 @@ import { fetchPostById } from '@/lib/api';
 import PostPreviewClient from './PostPreview.client';
 
 interface PostDetailsProps {
-  params: { id: string };
+  params: {
+    id: string;
+  };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 export default async function PostPreview({ params }: PostDetailsProps) {
