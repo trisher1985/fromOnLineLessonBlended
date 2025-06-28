@@ -7,7 +7,6 @@ interface PostDetailsProps {
   params: {
     id: string;
   };
-  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 export default async function PostPreview({ params }: PostDetailsProps) {
@@ -23,7 +22,7 @@ export default async function PostPreview({ params }: PostDetailsProps) {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <PostPreviewClient />
+      <PostPreviewClient id={parsedId} />
     </HydrationBoundary>
   );
 }
