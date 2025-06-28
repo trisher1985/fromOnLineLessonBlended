@@ -1,5 +1,5 @@
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
-import { PostPreview.client } from './PostPreview.client';
+import  PostPreviewClient  from "./PostPreview.client";
 import { fetchPostById } from '@/lib/api';
 import { Metadata } from 'next';
 
@@ -31,7 +31,7 @@ export default async function PostDetails({ params }: PostDetailProps) {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <PostPreview.client/>
+      <PostPreviewClient/>
     </HydrationBoundary>
   );
 }
