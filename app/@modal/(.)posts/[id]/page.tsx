@@ -1,14 +1,13 @@
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
-
 import { fetchPostById } from '@/lib/api';
 
-interface PostDetailsProps {
+interface PageProps {
   params: {
     id: string;
   };
 }
 
-export default async function PostPreview({ params }: PostDetailsProps) {
+export default async function PostPreview({ params }: PageProps) {
   const { id } = params;
   const parsedId = Number(id);
 
@@ -25,3 +24,4 @@ export default async function PostPreview({ params }: PostDetailsProps) {
     </HydrationBoundary>
   );
 }
+
