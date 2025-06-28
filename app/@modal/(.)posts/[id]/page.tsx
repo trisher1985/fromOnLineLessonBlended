@@ -4,11 +4,11 @@ import { fetchPostById } from '@/lib/api';
 import PostPreviewClient from './PostPreview.client';
 
 interface PostDetailsProps {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }
 
 export default async function PostPreview({ params }: PostDetailsProps) {
-  const { id } = await params;
+  const { id } = params;
   const parsedId = Number(id);
 
   const queryClient = new QueryClient();
